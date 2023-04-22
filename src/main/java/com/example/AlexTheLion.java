@@ -3,7 +3,7 @@ package com.example;
 import java.util.List;
 
 public class AlexTheLion extends Lion {
-    public AlexTheLion(String sex, IFeliformia feline) throws Exception {
+    public AlexTheLion(String sex, Feline feline) throws Exception {
         super("Самец", feline);
     }
 

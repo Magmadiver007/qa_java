@@ -5,7 +5,6 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import static com.example.TestData.*;
 import static org.junit.Assert.*;
 
@@ -14,7 +13,6 @@ public class TestFeline {
 
     @Spy
     private Feline feline;
-    //Feline feline = new Feline();
 
     @Test
     public void testEatMeatExpectedPredatorFoodList() throws Exception {
@@ -29,16 +27,15 @@ public class TestFeline {
 
     @Test
     public void testGetKittensExpectedOne() {
-        int expectedResult = KITTENS_DEFAULT;
         int actualResult = feline.getKittens();
-        Mockito.verify(feline).getKittens(KITTENS_DEFAULT);
-        assertEquals("Количество котят которое должно вернуться: "+KITTENS_DEFAULT,expectedResult, actualResult);
+        Mockito.verify(feline).getKittens(EXPECTED_KITTENS_DEFAULT);
+        assertEquals("Количество котят которое должно вернуться: "+EXPECTED_KITTENS_DEFAULT,EXPECTED_KITTENS_DEFAULT, actualResult);
     }
 
     @Test
     public void testGetKittensExpectedSendedValue() {
-        int expectedResult = KITTENS_CUSTOM;
-        int actualResult = feline.getKittens(KITTENS_CUSTOM);
-        assertEquals("Количество котят которое должно вернуться: "+KITTENS_CUSTOM,expectedResult, actualResult);
+        int actualResult = feline.getKittens(EXPECTED_KITTENS_CUSTOM);
+        assertEquals("Количество котят которое должно вернуться: "+EXPECTED_KITTENS_CUSTOM, EXPECTED_KITTENS_CUSTOM, actualResult);
+
     }
 }

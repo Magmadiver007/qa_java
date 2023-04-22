@@ -3,10 +3,10 @@ package com.example;
 import java.util.List;
 
 public class Lion {
-    public IFeliformia feline;
+    public Feline feline;
     boolean hasMane;
 
-    public Lion(String sex, IFeliformia feline) throws Exception {
+    public Lion(String sex, Feline feline) throws Exception {
 
         if ("Самец".equals(sex)) {
             hasMane = true;
@@ -17,9 +17,6 @@ public class Lion {
         }
         this.feline = feline;
     }
-
-
-    //Feline feline = new Feline();
 
     public int getKittens() {
         return feline.getKittens();

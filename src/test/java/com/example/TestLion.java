@@ -33,48 +33,32 @@ public class TestLion {
         return new Object[][] {
                 {"Самец", true},
                 {"Самка", false},
-                {"Неизвестен", null},
         };
     }
     @Mock
-   IFeliformia feline;
+    Feline feline;
 
 
     @Test
     public void testGetKittensExpectedOne() throws Exception {
-
-        try {
-            lion = new Lion(lionSex, feline);
-            Mockito.when(feline.getKittens()).thenReturn(KITTENS_DEFAULT);
-            assertEquals("Ожидалось иное количество котят", KITTENS_DEFAULT, lion.getKittens());
-        } catch (Exception exception) {
-            System.out.println(exception);
-        }
+        lion = new Lion(lionSex, feline);
+        Mockito.when(feline.getKittens()).thenReturn(EXPECTED_KITTENS_DEFAULT);
+        assertEquals("Ожидалось иное количество котят", EXPECTED_KITTENS_DEFAULT, lion.getKittens());
 
     }
 
 
     @Test
-    public void testDoesHaveManeExpectedBoolean() {
-        try {
-            lion = new Lion(lionSex, feline);
-            assertEquals("Грива не соответствует полу", isMane, lion.doesHaveMane());
-        } catch (Exception exception) {
-            System.out.println(exception);
-        }
+    public void testDoesHaveManeExpectedBoolean() throws Exception {
+        lion = new Lion(lionSex, feline);
+        assertEquals("Грива не соответствует полу", isMane, lion.doesHaveMane());
     }
 
 
     @Test
     public void testGetFoodExpectedPredatorFood() throws Exception {
-        try {
-            lion = new Lion(lionSex, feline);
-            Mockito.when(feline.getFood(PREDATOR)).thenReturn(PREDATOR_FOOD);
-            assertEquals("Ожидался иной набор еды", PREDATOR_FOOD, lion.getFood());
-        } catch (Exception exception) {
-            System.out.println(exception);
-        }
-
-
+        lion = new Lion(lionSex, feline);
+        Mockito.when(feline.getFood(PREDATOR)).thenReturn(PREDATOR_FOOD);
+        assertEquals("Ожидался иной набор еды", PREDATOR_FOOD, lion.getFood());
     }
 }

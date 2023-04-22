@@ -16,7 +16,6 @@ import static org.junit.Assert.*;
 public class TestCat {
     @Spy
     public Feline feline;
-//    Feline feline = new Feline();
 
     private Cat cat;
     @Before
