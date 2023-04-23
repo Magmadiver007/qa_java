@@ -21,8 +21,5 @@ public class TestLionSex{
         } finally {
             assertEquals("Ожидается ошибка", ERROR_MESSAGE_FOR_LION,errorMessage);
         }
-
-
-
     }
 }
